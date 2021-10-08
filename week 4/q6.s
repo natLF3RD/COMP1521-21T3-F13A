@@ -3,8 +3,12 @@ main:
 
     li  $t0, 24                 #     int x = 24;
 main__for:
-    blt $t0, 42, main__forinner #     if (x < 42) goto main__forinner;
-    j   main__endfor            #     goto main__endfor;
+    # blt $t0, 42, main__forinner #     if (x < 42) goto main__forinner;
+    # j   main__endfor            #     goto main__endfor;
+    
+    # alternative
+    bge $t0, 42, main__forinner #     while (x < 42) 
+    
 main__forinner:
     li  $v0, 1                  #         printf("%d",x);
     move $a0, $t0
