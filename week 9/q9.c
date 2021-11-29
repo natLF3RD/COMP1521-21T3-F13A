@@ -25,7 +25,7 @@ char *get_executable_name(char* path) {
 
     // now find the . character path
     char* pos = strchr(exec_path, '.');
-    if (pos == NULL | *(pos+1) != 'c' | *(pos+2) != '\0') {
+    if (pos == NULL || *(pos+1) != 'c' || *(pos+2) != '\0') {
         fprintf(stderr, "not a valid c file: %s", exec_path);
         exit(1);
     }
